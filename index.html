@@ -9,7 +9,26 @@
 <!-- FUENTE -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+
 <style>
+
+    #barra{
+
+position:fixed;
+
+top:0;
+left:0;
+
+height:4px;
+
+width:0%;
+
+background:white;
+
+z-index:9999;
+
+transition:.5s;
+}
 
 *{
     margin:0;
@@ -26,6 +45,7 @@ body{
 /* SLIDES */
 
 .slide{
+
     width:100vw;
     height:100vh;
 
@@ -40,16 +60,23 @@ body{
     opacity:0;
     pointer-events:none;
 
-    transition:1s;
-
     padding:20px;
-}
 
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+    transform:scale(1.05);
+}
 /* ACTIVA */
 
 .activo{
+
     opacity:1;
+
     pointer-events:auto;
+
+    transform:scale(1);
 }
 
 /* FONDOS */
@@ -65,7 +92,7 @@ body{
 #s1{
     background:
     linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
-    url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1400&auto=format&fit=crop');
+    url('s2.jpg');
     background-size:cover;
     background-position:center;
 }
@@ -73,7 +100,7 @@ body{
 #s2{
     background:
     linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
-    url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1400&auto=format&fit=crop');
+    url('s3.jpg');
     background-size:cover;
     background-position:center;
 }
@@ -81,7 +108,7 @@ body{
 #s3{
     background:
     linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop');
+    url('s3.jpg');
     background-size:cover;
     background-position:center;
 }
@@ -100,9 +127,12 @@ body{
     width:85%;
     max-width:900px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.10);
 
-    backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.4);
 
     border:1px solid rgba(255,255,255,.2);
 
@@ -303,10 +333,51 @@ button:hover{
     flex-direction:column;
     gap:20px;
 }
+
+.galeria img{
+
+width:220px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:3px solid white;
+
+flex-shrink:0;
+}
+.galeria{
+
+display:flex;
+
+gap:15px;
+
+overflow-x:auto;
+
+margin:25px 0;
+}
+
+.galeria img{
+
+width:220px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:3px solid white;
+
+flex-shrink:0;
+}
 </style>
 </head>
 
 <body>
+    <div id="barra"></div>
 
 <!-- ESTRELLAS -->
 
@@ -386,6 +457,42 @@ button:hover{
     </div>
 
 </div>
+<div class="slide" id="s3a">
+
+    <div class="contenido">
+
+        <h1>💻 Detrás del código</h1>
+
+        <div class="marco">
+            <img src="codigo.jpg">
+        </div>
+
+        <p>
+
+            Aunque esta página parece sencilla,
+            detrás de ella hubo muchas horas de trabajo.
+
+            <br><br>
+
+            Hubo errores que no entendía,
+            cosas que se rompían sin razón
+            y momentos en los que pensé en rendirme.
+
+            <br><br>
+
+            Pero siempre recordaba para quién estaba haciendo todo esto.
+
+        </p>
+
+        <button onclick="siguiente()">
+
+            Siguiente
+
+        </button>
+
+    </div>
+
+</div>
 
 <!-- SLIDE 4 -->
 
@@ -411,6 +518,45 @@ button:hover{
         </button>
 
     </div>
+
+</div>
+
+<div class="slide" id="s3b">
+
+<div class="contenido">
+
+<h1>📸 Algunos recuerdos</h1>
+
+<div class="galeria">
+
+<img src="foto1.jpg">
+
+<img src="foto2.jpg">
+
+<img src="foto3.jpg">
+
+<img src="foto4.jpg">
+
+<img src="foto5.jpg">
+
+</div>
+
+<p>
+
+Cada foto guarda una historia.
+
+Y aunque el tiempo pase,
+siempre será bonito volver a ellas.
+
+</p>
+
+<button onclick="siguiente()">
+
+Siguiente
+
+</button>
+
+</div>
 
 </div>
 
@@ -484,8 +630,6 @@ button:hover{
 </div>
 </div>
 
-
-
 <!-- AUDIO -->
 
 <audio id="musica" loop></audio>
@@ -496,7 +640,7 @@ button:hover{
 
 let canciones = [
 
-"https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=dreams-110734.mp3",
+"pretty isnt pretty.mp3",
 
 "https://cdn.pixabay.com/download/audio/2022/08/04/audio_2dde668d05.mp3?filename=beautiful-piano-116199.mp3",
 
@@ -530,6 +674,19 @@ let actual = 0;
 
 let slides = document.querySelectorAll(".slide");
 
+function actualizarBarra(){
+
+let porcentaje =
+
+((actual + 1) /
+slides.length) * 100;
+
+document
+.getElementById("barra")
+.style.width =
+porcentaje + "%";
+}
+
 function siguiente(){
 
     slides[actual].classList.remove("activo");
@@ -543,11 +700,12 @@ function siguiente(){
     }
 
     slides[actual].classList.add("activo");
+    
 
     audio.src = canciones[actual];
 
     audio.play();
-
+actualizarBarra();
 }
 
 /* REINICIAR */
@@ -563,7 +721,7 @@ function reiniciar(){
     audio.src = canciones[0];
 
     audio.play();
-
+ actualizarBarra();
 }
 
 /* ESTRELLAS */
@@ -609,9 +767,35 @@ function escribir(){
     }
 
 }
+actualizarBarra();
 escribir();
+let inicioX = 0;
 
+document.addEventListener(
+"touchstart",
+e=>{
 
+inicioX =
+e.touches[0].clientX;
+
+}
+);
+
+document.addEventListener(
+"touchend",
+e=>{
+
+let finX =
+e.changedTouches[0].clientX;
+
+if(inicioX - finX > 100){
+
+    siguiente();
+
+}
+
+}
+);
 </script>
 
 </body>
