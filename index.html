@@ -928,7 +928,7 @@ video.addEventListener("timeupdate", () => {
 
             if(audio.volume < 0.5){
 
-                audio.volume += 0.005;
+                audio.volume += 0.0025;
 
             }else{
 
@@ -947,7 +947,7 @@ video.addEventListener("seeked", () => {
     if(video.currentTime >= 200 && !musicaIniciada){
 
         audio.src = "cancion3.mp3";
-        audio.volume = 0.005;
+        audio.volume = 0.0025;
         audio.play();
 
         musicaIniciada = true;
