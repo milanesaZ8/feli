@@ -318,6 +318,19 @@ button:hover{
         width:200px;
         height:200px;
     }
+    .final{
+    flex-direction:column;
+}
+
+.fotosFinal{
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.final p{
+    text-align:left;
+}
 
 }
 
@@ -718,10 +731,16 @@ por último, no me queda más que decirte que no podría estar más orgulloso de
            
         </p>
 
-        <video id="videoFinal" controls style="width:100%; margin-top:25px; border-radius:20px;">
-    <source src="video.mp4" type="video/mp4">
-</video>
+        <video
+    id="videoFinal"
+    controls
+    preload="auto"
+    playsinline
+    style="width:100%; margin-top:25px; border-radius:20px;">
 
+    <source src="video.mp4" type="video/mp4">
+
+</video>
         <button onclick="reiniciar()">
             Volver al inicio
         </button>
