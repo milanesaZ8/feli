@@ -38,7 +38,7 @@ transition:.5s;
 
 body{
     font-family:'Poppins',sans-serif;
-    overflow:hidden;
+    overflow-x:hidden;
     background:black;
 }
 
@@ -47,7 +47,7 @@ body{
 .slide{
 
     width:100vw;
-    height:100vh;
+    min-height:100vh;
 
     position:absolute;
     top:0;
@@ -56,6 +56,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+
+    overflow-y:auto;
 
     opacity:0;
     pointer-events:none;
@@ -100,7 +102,7 @@ body{
 #s2{
     background:
     linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
-    url('s3.jpg');
+    url('s3b.jpg');
     background-size:cover;
     background-position:center;
 }
@@ -116,29 +118,58 @@ body{
 #s4{
     background:
     linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1400&auto=format&fit=crop');
+    url('tsitp.jpg');
+    background-size:cover;
+    background-position:center;
+}
+#s5{
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('tsitp.jpg');
+    background-size:cover;
+    background-position:center;
+}
+#s6{
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('osa.jpg');
+    background-size:cover;
+    background-position:center;
+}
+#s3b{
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('irvine.jpg');
+    background-size:cover;
+    background-position:center;
+}
+#s7{
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('tec.jpg');
+    background-size:cover;
+    background-position:center;
+}
+#s8{
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('luna.jpg');
     background-size:cover;
     background-position:center;
 }
 
-/* CAJA CENTRAL */
 
 .contenido{
-    width:85%;
+    width:90%;
     max-width:900px;
 
-    background:rgba(255,255,255,.10);
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(18px);
 
-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
 
-box-shadow:
-0 10px 40px rgba(0,0,0,.4);
-
-    border:1px solid rgba(255,255,255,.2);
-
-    border-radius:30px;
-
-    padding:40px;
+    padding:50px 40px;
 
     text-align:center;
 
@@ -150,35 +181,36 @@ box-shadow:
 /* TITULOS */
 
 h1{
-    font-size:55px;
-    margin-bottom:20px;
+    font-size:52px;
+    margin-bottom:25px;
+    letter-spacing:1px;
+    font-weight:700;
 }
-
 /* TEXTO */
 
 p{
-    font-size:22px;
-    line-height:1.8;
+    font-size:20px;
+    line-height:1.9;
     font-weight:300;
+    text-align:justify;
+
+    max-width:750px;
+    margin:0 auto;
 }
 
 /* BOTON */
 
 button{
-    margin-top:35px;
-
-    padding:15px 35px;
+    margin-top:30px;
+    padding:14px 32px;
 
     border:none;
+    border-radius:50px;
 
-    border-radius:40px;
-
-    background:white;
-
+    background:rgba(255,255,255,.9);
     color:black;
 
-    font-size:18px;
-
+    font-size:16px;
     font-weight:600;
 
     cursor:pointer;
@@ -274,6 +306,7 @@ button:hover{
 
     p{
         font-size:18px;
+        text-align:left;
     }
 
     .contenido{
@@ -349,14 +382,14 @@ border:3px solid white;
 flex-shrink:0;
 }
 .galeria{
+    display:flex;
+    gap:18px;
 
-display:flex;
+    overflow-x:auto;
+    margin:30px auto;
 
-gap:15px;
-
-overflow-x:auto;
-
-margin:25px 0;
+    padding:10px;
+    justify-content:center;
 }
 
 .galeria img{
@@ -409,7 +442,7 @@ flex-shrink:0;
 
     <div class="contenido">
 
-        <h1>💖 Hola, Luna</h1>
+        <h1> Hola, Luna ࣪🌙</h1>
 
         <div class="marco">
 
@@ -419,10 +452,14 @@ flex-shrink:0;
         </div>
 
         <p>
-            Inicié este proyecto 6 meses antes de tu graduación,
-            sabiendo que duarente mi ultimo semestre aprenderia algo de programacion y sabiendo que talvez no podria estar ahi.<br><br>
-
-            Pero aun así quería crear algo especial para ti.
+            Empece este proyecto seis meses antes de tu graduacion, porque en ese momento 
+            apenas me habian enseñado algunas cosas sobre programacion y sabia que me enseñarian mas
+             duarante todo mi ultimo semestre. <br> <br>
+             
+             tenia muchisimas ganas de ir a tu graduacion, 
+             pero tambien sabia muy bien que existia las posibilidad de no poder esta contigo
+              en un momento tan importante. asi que decidi hacer algo especial y significativo
+               que puediera darte
         </p>
 
         <button onclick="siguiente()">
@@ -442,12 +479,18 @@ flex-shrink:0;
         <h1>✨ mi proyecto</h1>
 
         <p>
-            Cuando aprendí programación,
-            pensé que sería buena idea usar todo lo que aprendiera
-            para crear una página increible dedicada a una persona muy especial.<br><br>
+           cuando empecé esta página, apenas llevaba unas cinco clases de HTML (un lenguaje relativamente sencillo),
+y ya me sentía como todo un programador experto,
 
-           y genuinamene sigo pensando que es una idea muy original (supongo que es como mi version de
-            cuando los adultos se hacian videos con musica de chayanne)
+aunque ese sentimiento no duró mucho.<br><br>
+
+pronto llegaron los errores:
+no poder subir un archivo mp3, una imagen cortada, un efecto de texto que no funcionaba,
+o pasar horas buscando una llave mal cerrada entre más de 600 líneas de código.
+fueron experiencias que me llevaron al límite más de una vez.<br><br>
+
+hubo momentos en los que pensé en abandonar el proyecto, o incluso en no mandártelo nunca, especialmente en los últimos meses.
+pero si estás viendo esto. creo que no fue asi. dicho eso, espero que te guste.
         </p>
 
         <button onclick="siguiente()">
@@ -457,42 +500,7 @@ flex-shrink:0;
     </div>
 
 </div>
-<div class="slide" id="s3a">
 
-    <div class="contenido">
-
-        <h1>💻 Detrás del código</h1>
-
-        <div class="marco">
-            <img src="codigo.jpg">
-        </div>
-
-        <p>
-
-            Aunque esta página parece sencilla,
-            detrás de ella hubo muchas horas de trabajo.
-
-            <br><br>
-
-            Hubo errores que no entendía,
-            cosas que se rompían sin razón
-            y momentos en los que pensé en rendirme.
-
-            <br><br>
-
-            Pero siempre recordaba para quién estaba haciendo todo esto.
-
-        </p>
-
-        <button onclick="siguiente()">
-
-            Siguiente
-
-        </button>
-
-    </div>
-
-</div>
 
 <!-- SLIDE 4 -->
 
@@ -503,14 +511,13 @@ flex-shrink:0;
         <h1>🌙 ¿Quién es Luna?</h1>
 
         <p>
-            Creo que Luna es una persona demasiado compleja para describir
-            sin embargo, igual lo intentare.<br><br>
+            
 
-            para mi luna es una niña bastante loca e impredecible, agluien que muy en su 
-            interior siepre cree tener larazon<br><br>
+para mi luna es una persona demasiado compleja para poder describir, apesar de eso lo intentare.<br><br>
 
-            Pero mientras más la conoces,
-            te puedes dar cuenta de que es una persona llena de matizes y profundidad en sus pensamientos
+para mi luna es la niña mas caotica pero tambien la mas divertida, es capaz de reir durante horas contigo
+pero tambien sorprenderte con pensemientos profundos y una personalidad llena de matices, en palabras de
+ shrek es parecida a una cebolla con muchas capas
         </p>
 
         <button onclick="siguiente()">
@@ -525,29 +532,37 @@ flex-shrink:0;
 
 <div class="contenido">
 
-<h1>📸 Algunos recuerdos</h1>
+<h1>📸 que es luna</h1>
 
 <div class="galeria">
 
-<img src="foto1.jpg">
+<img src="galeria1.jpg">
 
-<img src="foto2.jpg">
+<img src="galeria2.jpg">
 
-<img src="foto3.jpg">
+<img src="galeria3.jpg">
 
-<img src="foto4.jpg">
+<img src="galeria4.jpg">
 
-<img src="foto5.jpg">
+<img src="luna2.jpg">
 
 </div>
 
 <p>
 
-Cada foto guarda una historia.
+luna es una persona multifacética a la que he podido acompañar a lo largo de su desarrollo, y si de algo me di cuenta en ese tiempo, es que su vida está muy lejos de ser una vida perfecta. ha sido una vida llena de retos que hasta el momento sigue arrojando desafíos.
 
-Y aunque el tiempo pase,
-siempre será bonito volver a ellas.
+porque crecer no solo es cambiar, yo diría que crecer es más bien ponerse un par de huevos u ovarios en este caso, y salir a afrontar la vida.<br><br>
 
+y es ahí donde veo a luna, pues en el tiempo que he pasado con ella he sido capaz de ver su determinación. en momentos donde cualquiera pensaría en rendirse y caer abatido ante la magnitud de un problema, ella seguiría.
+
+y no porque sea más fácil para ella, sino porque su voluntad es su cualidad más fuerte.<br><br>
+
+la vi exigirse en cada presentación, en cada examen y en cada entrenamiento, y también la vi brillar en el escenario o volando en las telas.
+
+y en ese momento que volaba sobre las telas no podria pensar en otra cosa que no fuera la admiracion que tengo por ella 
+
+porque que nunca conocí a alguien con esa determinación.
 </p>
 
 <button onclick="siguiente()">
@@ -569,10 +584,10 @@ Siguiente
         <h1>💌 tsitp </h1>
 
         <p>
-           recuerdas a sheyla? recuerdo cuando la primera ves que vimos tsitp haberte dicho que si tu 
+           recuerdas a sheyla? recuerdo cuando la primera vez que vimos tsitp haberte dicho que si tu 
            fueras un personaje de la serie serias 100% sheyla.<br><br>
            
-           pues sheyla era super cool madura y sus outifts eran los mas increibles 
+           pues sheyla era super cool madura y sus outfits eran los mas increibles 
            definitivamente y por eso pensaba que serias ella pero pensandolo bien aunque es verdad creo que 
            hay un personaje que te representa mejor<br><br>
         </p>
@@ -602,18 +617,18 @@ Siguiente
         <h1>💌 taylor </h1>
 
         <p>
-           y ¿porque taylor?bueno en la serie taylor tiene una personalidad fuerte aveces puede parecer dramtica pero es ma ella 
+           y ¿porque taylor?bueno en la serie taylor tiene una personalidad fuerte a veces puede parecer dramatica pero es mas ella 
            actuando desde la emocion y la lealtad, taylor es muy protectora especialmente con belly le gusta divertirse y vivir la vida 
            intensamente.<br><br>
            
            
-           aveces toma decisiones impulsivas y caoticas pero tambion tiene moemtnos sensibles y maduros aveces tiene
-            inseguridades que intenta ocultar con su confianza aplasante y puede pasar de bromear a ponerse seria mmuy rapido <br><br>
+           aveces toma decisiones impulsivas y caoticas pero tambien tiene momentos sensibles y maduros a veces tiene
+            inseguridades que intenta ocultar con su confianza aplastante y puede pasar de bromear a ponerse seria mmuy rapido <br><br>
     
         </p>
 
-        <button onclick="reiniciar()">
-            Volver a empezar
+        <button onclick="siguiente()">
+            siguiente
         </button>
 
     </div>
@@ -630,6 +645,91 @@ Siguiente
 </div>
 </div>
 
+<!-- SLIDE 6 - FELICITACIÓN -->
+
+
+
+<!-- SLIDE 7 - AGRADECIMIENTO -->
+
+<div class="slide" id="s6">
+
+    <div class="contenido">
+
+        <h1>💌 Gracias</h1>
+
+        <p>
+            gracias por ser una parte tan importante de mi vida durante todo este tiempo.  
+            por confiarme las cosas buenas asi como las malas, por compartir momentos difíciles y también los felices.  
+            <br><br>
+
+            gracias porque, incluso inconcientemente me ayudabas más de lo que te dabas cuenta.
+            y sobre todo, gracias por hacer de esta etapa de mi vida mucha mas feliz.
+        </p>
+
+        <button onclick="siguiente()">
+            Siguiente
+        </button>
+
+    </div>
+
+</div>
+<div class="slide" id="s7">
+
+    <div class="contenido">
+
+        <h1>🎓 Felicidades, Luna</h1>
+
+        <p>
+            sé que hubo momentos difíciles, pues viví una buena parte de ellos junto a ti. sé que hubo días de estrés y de cansancio, días que se sentían como si tú hubieras dado a luz a Ángela Aguilar.<br><br>
+
+sé que algunas personas fueron malas contigo y al final se fueron, pero también sé que gracias a eso llegaron otras con las que viviste cosas increíbles y que amas mucho, personas con las que puedes salir y ser tú misma.<br><br>
+
+sé que hubo momentos en los que no aguantabas un solo día más lejos de tu familia y poco faltó para que compraras el primer vuelo a México.<br><br>
+
+aun así, sé algo más: sé que estabas llena de determinación, determinación de lograr tus sueños y de llegar al lugar que quieres. sé que muchas cosas no salieron como tenían que salir y tal vez no siempre con la frente en alto, pero yo sé que nunca dejaste de avanzar hacia donde hoy te encuentras.<br><br>
+
+yo mejor que nadie sé todo lo que has hecho para llegar a lo que eres ahora, así como también sé todo lo que has dejado de hacer por ello. sé que te falta camino por recorrer, pero también sé que si cruzas ese camino con la determinación y valentía con la que lo has hecho hasta ahora, no habrá nada que pueda detenerte.<br><br>
+
+por último, no me queda más que decirte que no podría estar más orgulloso de ti, de todo lo que has logrado y, en especial, de la mujer en la que te has convertido.
+
+
+        </p>
+
+        <button onclick="siguiente()">
+            Siguiente
+        </button>
+
+    </div>
+
+</div>
+<!-- SLIDE 8 - FINAL + VIDEO -->
+
+<div class="slide" id="s8">
+
+    <div class="contenido">
+
+        <h1> 🐟 Final⭐️</h1>
+
+        <p>
+           
+        </p>
+
+        <p style="margin-top:20px;">
+           
+        </p>
+
+        <video id="videoFinal" controls style="width:100%; margin-top:25px; border-radius:20px;">
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+        <button onclick="reiniciar()">
+            Volver al inicio
+        </button>
+
+    </div>
+
+</div>
+
 <!-- AUDIO -->
 
 <audio id="musica" loop></audio>
@@ -642,13 +742,8 @@ let canciones = [
 
 "pretty isnt pretty.mp3",
 
-"https://cdn.pixabay.com/download/audio/2022/08/04/audio_2dde668d05.mp3?filename=beautiful-piano-116199.mp3",
+"cancion.mp3",
 
-"https://cdn.pixabay.com/download/audio/2022/01/18/audio_d1718ab41b.mp3?filename=emotional-piano-112623.mp3",
-
-"https://cdn.pixabay.com/download/audio/2022/03/10/audio_942f3f3f61.mp3?filename=calm-piano-110397.mp3",
-
-"https://cdn.pixabay.com/download/audio/2022/03/09/audio_57d3d1f5d6.mp3?filename=sad-piano-110389.mp3"
 
 ];
 
@@ -656,7 +751,7 @@ let audio = document.getElementById("musica");
 
 /* INICIAR MUSICA */
 
-document.body.addEventListener("click", iniciarAudio, {once:true});
+
 
 function iniciarAudio(){
 
@@ -687,24 +782,36 @@ document
 porcentaje + "%";
 }
 
-function siguiente(){
+ function siguiente(){
 
     slides[actual].classList.remove("activo");
 
     actual++;
 
-    if(actual >= slides.length){
+    if(actual === 1){
+audio.src = canciones[0];
+audio.volume = 0.6
+audio.play();
 
-        actual = 0;
 
     }
+if(actual ===4){
 
+    audio.pause();
+    audio.src =canciones[1]
+    audio.currentTime =0;
+    audio.volume= 0.5
+    audio.play();
+}
+
+if(actual >= slides.length){
+
+actual = 0;
+}
     slides[actual].classList.add("activo");
     
 
-    audio.src = canciones[actual];
-
-    audio.play();
+    
 actualizarBarra();
 }
 
@@ -746,7 +853,10 @@ for(let i=0; i<100; i++){
 let texto = `
 Hola, Luna.
 
-¿como estas? espero que te encuentres bien da click cuando estes lista
+ espero que te encuentres bien. hoy es tu graduacion y aunque no se exactamente
+  donde estaremos cuando veas esto realmente queria hacer algo especial para ti.
+
+  asi que, cuando estes lista da click para comenzar
 `;
 
 let i = 0;
@@ -796,6 +906,54 @@ if(inicioX - finX > 100){
 
 }
 );
+
+let video = document.getElementById("videoFinal");
+
+video.addEventListener("play", () => {audio.pause();
+
+});
+let musicaIniciada = false;
+
+video.addEventListener("timeupdate", () => {
+
+    if(video.currentTime >= 200 && !musicaIniciada){
+
+        audio.src = "cancion3.mp3";
+        audio.volume = 0.05; 
+        audio.play();
+
+        musicaIniciada = true;
+
+        let subirVolumen = setInterval(() => {
+
+            if(audio.volume < 0.5){
+
+                audio.volume += 0.005;
+
+            }else{
+
+                clearInterval(subirVolumen);
+
+            }
+
+        }, 500);
+
+    }
+
+});
+
+video.addEventListener("seeked", () => {
+
+    if(video.currentTime >= 200 && !musicaIniciada){
+
+        audio.src = "cancion3.mp3";
+        audio.volume = 0.005;
+        audio.play();
+
+        musicaIniciada = true;
+    }
+
+});
 </script>
 
 </body>
