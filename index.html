@@ -723,9 +723,9 @@ por último, no me queda más que decirte que no podría estar más orgulloso de
 
         <h1> 🐟 Final⭐️</h1>
 
-        <p>
-           
-        </p>
+    
+           <p id="mensajeFinal"></p>
+    
 
         <p style="margin-top:20px;">
            
@@ -829,7 +829,9 @@ actual = 0;
 }
     slides[actual].classList.add("activo");
     
-
+if(actual === 8){
+    escribirFinal();
+}
     
 actualizarBarra();
 }
@@ -928,6 +930,8 @@ if(inicioX - finX > 100){
 
 let video = document.getElementById("videoFinal");
 
+let fraseEscrita = false;
+
 video.addEventListener("play", () => {audio.pause();
 
 });
@@ -973,6 +977,41 @@ video.addEventListener("seeked", () => {
     }
 
 });
+
+let textoFinal = `
+There are times where it feels like the world is happening to you.
+
+But remember that you are also happening to the world.
+
+— Steven
+`;
+
+let indiceFinal = 0;
+
+function escribirFinal(){
+
+    let elemento = document.getElementById("mensajeFinal");
+
+    elemento.innerHTML = "";
+    indiceFinal = 0;
+
+    function escribir(){
+
+        if(indiceFinal < textoFinal.length){
+
+            elemento.innerHTML += textoFinal.charAt(indiceFinal);
+
+            indiceFinal++;
+
+            setTimeout(escribir, 60);
+
+        }
+
+    }
+
+    escribir();
+
+}
 </script>
 
 </body>
